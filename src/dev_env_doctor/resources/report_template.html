@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; style-src 'unsafe-inline'">
+  <title>DevEnv Doctor report</title>
+  <style>
+    body { color: #202124; font: 16px/1.5 sans-serif; margin: 2rem auto; max-width: 72rem; padding: 0 1rem; }
+    table { border-collapse: collapse; margin: 1rem 0 2rem; width: 100%; }
+    th, td { border: 1px solid #c7c7c7; padding: 0.55rem; text-align: left; vertical-align: top; }
+    th { background: #f2f4f7; }
+    td ul { margin: 0; padding-left: 1.25rem; }
+    .diagnostics { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DevEnv Doctor report</h1>
+    <p>Generated as a static, offline report.</p>
+  </header>
+  <main>
+    <section aria-labelledby="metadata-heading">
+      <h2 id="metadata-heading">Scan metadata</h2>
+      $metadata
+    </section>
+    <section aria-labelledby="diagnostics-heading">
+      <h2 id="diagnostics-heading">Diagnostics</h2>
+      <table class="diagnostics">
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">Title</th>
+            <th scope="col">Severity</th>
+            <th scope="col">Summary</th>
+            <th scope="col">Evidence</th>
+            <th scope="col">Suggestion</th>
+          </tr>
+        </thead>
+        <tbody>
+          $diagnostics
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

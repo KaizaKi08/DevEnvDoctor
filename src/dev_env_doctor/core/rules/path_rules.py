@@ -1,0 +1,1 @@
+"""PATH diagnostic rules placeholder."""

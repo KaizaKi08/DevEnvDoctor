@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dev-env-doctor"
+version = "0.1.0"
+description = "Read-only diagnostics for Windows developer environments."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "PySide6==6.12.0",
+    "pydantic==2.13.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "ruff==0.16.8",
+    "pyinstaller==6.22.3",
+]
+
+[project.scripts]
+dev-env-doctor = "dev_env_doctor.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dev_env_doctor = ["resources/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
